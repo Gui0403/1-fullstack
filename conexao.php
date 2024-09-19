@@ -12,12 +12,17 @@
         function mensagem($nome, $texto, $tipo){
             if ($tipo == "success"){
                 echo "<div class='alert alert-$tipo' role='alert'>
-  $nome $texto
-</div>";
+                $nome $texto
+                </div>";
             }else{
                 echo "<div class='alert alert-$tipo' role='alert'>
-  $nome $texto
-</div>";
+                $nome $texto
+                </div>";
             }
+        }
+        function mostrar_data($data){
+            $data_correta = explode('-', $data);
+            $escreve = $data_correta[2] . "/" .$data_correta[1] .$data_correta[0];
+            return $escreve;
         }
 ?>

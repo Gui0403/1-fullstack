@@ -4,21 +4,29 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <title>Tela inicial</title>
+    <title>Tela de Cadastro</title>
   </head>
   <body>
     <div class="container">
         <div class="row">
-            <div class="column">
-               <div class="jumbotron">
-                    <h1 class="display-4">Cadastro web</h1>
-                    <p class="lead">Sistema simples de CRUD, base de estudos, PHP, MySQL.</p>
-                    <hr class="my-4">
-                    <p>Acesse as funções do Site</p>
-                    <a href="tela_cadastro.php" class="btn btn-primary btn-lg" role="button">Cadastrar-se</a> 
-                    <a href="pesquisa.php" class="btn btn-primary btn-lg" role="button">Lista de pessoas</a> 
-               </div>
-            </div>
+            <?php 
+            include "conexao.php";
+                $id = $_POST["id"];
+                $nome = $_POST["nome"];
+                $endereco = $_POST["endereco"];
+                $telefone = $_POST["telefone"];
+                $email = $_POST["email"];
+                $data_nascimento = $_POST["data_nascimento"];
+
+                $sql = "UPDATE `pessoas` set `nome` = '$nome', `endereco` = '$endereco', `telefone` = '$telefone', `email` = '$email', `data_nascimento` = '$data_nascimento' WHERE cod_pessoa = $id";
+
+                if (mysqli_query($conn, $sql)) {
+                    mensagem($nome,"Alterado com Sucesso!", 'success');
+                }else {
+                    mensagem($nome,"NÃO foi Alterado!", 'danger');}
+
+            ?>
+            <div class="colunm"><a href="index.php" class="btn btn-info">Voltar</a></div>
         </div>
     </div>
    

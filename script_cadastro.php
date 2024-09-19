@@ -26,6 +26,7 @@
                     mensagem($nome,"NÃO foi cadastrado!", 'danger');}
 
             ?>
+            <div class="colunm"><a href="index.php" class="btn btn-info">Voltar</a></div>
         </div>
     </div>
    
