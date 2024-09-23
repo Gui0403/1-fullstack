@@ -22,7 +22,7 @@
         }
         function mostrar_data($data){
             $data_correta = explode('-', $data);
-            $escreve = $data_correta[2] . "/" .$data_correta[1] .$data_correta[0];
+            $escreve = $data_correta[2] . "/" .$data_correta[1] ."/".$data_correta[0];
             return $escreve;
         }
 ?>
